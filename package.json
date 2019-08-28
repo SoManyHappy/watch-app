@@ -1,0 +1,18 @@
+{
+  "name": "watch-app",
+  "version": "1.0.0",
+  "description": "不能忍受webstorm那sb一样的启动速度",
+  "main": "watch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "yk-dev",
+  "license": "ISC",
+  "dependencies": {
+    "hjson": "^3.1.2",
+    "iced-coffee-script": "^108.0.11",
+    "jade": "^1.11.0",
+    "node-sass": "^4.11.0"
+  }
+}
