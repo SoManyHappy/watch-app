@@ -1,11 +1,9 @@
 'use strict';
 const fs = require("fs");
 const childProcess = require('child_process');
-const tool = require("./tool");//{ formatCmd, regTool, compileFile }
+const tool = require("./tool");
 
 const operations = ["change", "rename"];
-
-let initList = []
 
 class Watch {
     constructor(path) {
@@ -17,8 +15,8 @@ class Watch {
         childProcess.exec(tool.formatCmd(name, type), { cwd: this.path }, (err, stdout, stderr) => {
             this.task[name] = "end";
             if (err) {
-                console.error("\n文件： " + name + "编译出错！！！");
-                // console.error(err.toString() + "\n");
+                console.error("\n文件： " + this.path + "/" + name + "编译出错！！！");
+                console.error(err.toString() + "\n");
             } else {
                 console.log("\n编译文件：" + this.path + "/" + name + "\n");
             }
@@ -34,25 +32,6 @@ class Watch {
             if (operations.indexOf(e) != -1 && type && (!this.task[name] || this.task[name] == "end")) {
                 this.task[name] = "start";
                 this.compire(name, type);
-                // tool.compileFile(this.path + "/" + name, type);
-            }
-        });
-    };
-    // 初始化
-    init() {
-        fs.readdir(this.path, { withFileTypes: true }, (err, files) => {
-            if(err) {
-                console.err("获取文件目录失败！！")
-                return;
-            }
-            for(let i = 0; i < files.length; i++) {
-                let type = tool.regTool(files[i].name)
-                if(type && !files[i].isDirectory() && initList.indexOf(files[i].name) == -1) {
-                    // let resp = compileFile(this.path + "/" + files[i].name, type);
-                    // console.log(resp)
-                    console.log(files[i].name)
-                    initList.push(files[i].name);
-                }
             }
         });
     };
