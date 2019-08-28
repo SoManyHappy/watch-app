@@ -1,7 +1,7 @@
 'use strict';
 const fs = require("fs");
-const watch = require("./src/watch");
-const tool = require("./src/tool");
+const watch = require("./watch");
+const tool = require("./tool");
 
 const ingoreObj = {
     file: [".git", ".idea"],

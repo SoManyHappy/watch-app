@@ -1,6 +1,6 @@
 'use strict';
 const readline = require('readline');
-const app = require("./app");
+const app = require("./src/app");
 
 const pathRequire = readline.createInterface({
     input: process.stdin,
