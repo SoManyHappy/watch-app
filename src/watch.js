@@ -7,7 +7,7 @@ const operations = ["change", "rename"];
 
 class Watch {
     constructor(path) {
-        this.path = path.split("\\").join("/"); 
+        this.path = path; 
         this.task = {};
     };
     // 编译

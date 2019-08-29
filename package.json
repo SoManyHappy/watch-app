@@ -1,11 +1,14 @@
 {
-  "name": "watch-app",
-  "version": "1.0.0",
-  "description": "不能忍受webstorm那sb一样的启动速度",
-  "main": "watch.js",
+  "name": "@yk000/watch-myapp",
+  "version": "1.0.1",
+  "description": "个人的编译小工具",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+  },
+  "bin": {
+    "yk-cli": "index.js"
   },
   "author": "yk-dev",
   "license": "ISC",
