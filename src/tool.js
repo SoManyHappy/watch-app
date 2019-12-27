@@ -11,7 +11,7 @@ module.exports = {
             case 'jade':
                 return "jade " + name;
             case 'hjson':
-                return "hjson -j " + name + " " + name.replace(/.hjson/, ".json");
+                return "hjson -js " + name;
             case 'sass':
                 return "node-sass " + name + " " + name.replace(/.sass/, ".css");
         }

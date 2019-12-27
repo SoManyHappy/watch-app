@@ -1,9 +1,6 @@
 'use strict';
-const fs = require("fs");
 const childProcess = require('child_process');
 const tool = require("./tool");
-
-const operations = ["change", "rename"];
 
 class Init {
     constructor(list) {
@@ -11,7 +8,7 @@ class Init {
     };
     // 编译
     compire(item, call) {
-        childProcess.exec(tool.formatCmd(item.name, item.type), { cwd: item.path }, (err, stdout, stderr) => {
+        childProcess.exec(tool.formatCmd(item.name, item.type), { cwd: item.path }, (err) => {
             if (err) {
                 console.error("\n文件： " + item.path + "/" + item.name + "编译出错！！！");
             }
