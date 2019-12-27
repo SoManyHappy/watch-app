@@ -1,6 +1,6 @@
 {
   "name": "@yk000/watch-myapp",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "个人的编译小工具",
   "main": "index.js",
   "scripts": {

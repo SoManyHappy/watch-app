@@ -91,6 +91,7 @@ module.exports = {
         let fileName = path.split("/").reverse()[0]
         let dirName = path.split("/").slice(0,-1).join("/")
         let type = tool.regTool(fileName)
+        
         childProcess.exec(tool.formatCmd(fileName, type), { cwd: dirName }, (err, stdout) => {
 			if (err) {
 				console.error("\n文件： " + path + "编译出错！！！");
@@ -100,7 +101,6 @@ module.exports = {
 					let _path = this.path + "/" + fileName.replace(/.hjson/, ".json")
                     fs.writeFile(_path, stdout, (err) => {
                         if (err) {
-				            console.error("\n文件： " + path + "编译出错！！！"); 
                             console.error(err.toString() + "\n") 
                         } else {
                             console.log("\n编译文件：" + path);

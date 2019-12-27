@@ -4,7 +4,6 @@ const readline = require('readline');
 const process = require("process")
 const app = require("./src/app");
 const tool = require("./src/tool");
-const config = require("./config.json")
 
 const pathRequire = readline.createInterface({
     input: process.stdin,
